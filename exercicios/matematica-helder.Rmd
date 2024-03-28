@@ -1,0 +1,113 @@
+---
+title: "Lista para dúvidas de matemática"
+author: "Curso-R"
+date: "2024-02-19"
+output: pdf_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# Exercício 1
+
+Substitua as variáveis nas expressões abaixo e calcule o seu valor (em R ou não)
+
+$n=10$ $x = (7, 10, 4, 5, 8, 7, 10, 6, 3, 10)$ $x_i$ são os elementos de $x$, em ordem: $x_1 = 7$, $x_2 = 10$, ..., $x_10 = 10$
+
+## a) $$\sum_{i=1}^{10} x_i$$
+
+```{r}
+a <- c(7, 10, 4, 5, 8, 7, 10, 6, 3, 10)
+resultado_a <- sum(a)
+resultado_a
+```
+
+## b) $$\bar{x} = \frac{\sum_{i=1}^{10} x_i}{n}$$
+
+```{r}
+n <- length(a)
+resultado_b <- sum(a/n)
+resultado_b
+```
+
+## c) $$\frac{\sum_{i=1}^{10} x_i^2}{n}$$
+
+```{r}
+resultado_c <- sum(a^2)
+resultado_c
+```
+
+## d) Usando $\bar{x}$ do item b), calcule:
+
+$$\frac{\sum_{i=1}^{10} (x_i-\bar{x})^2}{n}$$
+
+```{r}
+resultado_d <- sum((a-resultado_b)^2)/n
+resultado_d
+```
+
+## e) $$\frac{\sum_{i=1}^{10} |x_i-\bar{x}|}{n}$$
+
+```{r}
+resultado_e <- sum(abs(a - resultado_b))/n
+resultado_e
+```
+
+## f) $$\frac{\sum_{i=1}^{10} \log x_i}{n}$$
+
+```{r}
+resultado_f <- sum(log(a))/n
+resultado_f
+```
+
+# Exercício 2
+
+Descreva em suas palavras o que constitui os elementos de cada um dos conjuntos abaixo e dê 2 exemplos de números (num sentido amplo) que pertencem e que não pertencem a cada um dos conjuntos:
+
+### a) O conjunto dos números naturais $\mathbb{N}$
+
+> Os números naturais são os números inteiros positivos, incluindo o zero (dependendo da definição adotada, pois algumas não incluem o zero). Eles são os números usados para contar objetos. Exemplos de números que pertencem a $\mathbb{N}$: 0, 2. Exemplos de números que **não** pertencem a $\mathbb{N}$: $-1$ , $\frac{1}{2}$.
+
+### b) O conjunto dos números inteiros $\mathbb{Z}$.
+
+> Os números inteiros incluem todos os números naturais $(\mathbb{N})$, os seus opostos negativos e o zero. Eles não incluem frações ou números decimais. Exemplos de números que pertencem a $\mathbb{Z}$: $-5$ , $0$ . Exemplos de números que **não** pertencem a $\mathbb{Z}$: $\frac{3}{4}$, $\pi$
+
+### c) O conjunto dos números racionais $\mathbb{Q}$.
+
+> Os números racionais são todos aqueles que podem ser expressos na forma de uma fração $\frac{a}{b}$, onde (a) e (b) são números inteiros e $(b \neq 0)$. Isso inclui números inteiros (pois podem ser expressos como $(\frac{a}{1})$ e frações. Exemplos de números que pertencem a $\mathbb{Q}$: $\frac{1}{2}$, 3 (pois 3 = $\frac{3}{1}$. Exemplos de números que **não** pertencem a $\mathbb{Q}$: $\sqrt{2}$ (raiz quadrada de 2 não pode ser expressa exatamente como uma fração), $\pi$.
+
+### d) O conjunto dos números reais $\mathbb{R}$.
+
+# Exercício 3
+
+Calcule
+
+## a)
+
+$f(-1)$ e $f\left(\frac{1}{2}\right)$, sendo $f(x) = -x^2+2x$
+
+## b)
+
+$g(0)$, $g(2)$ e $g\left(\sqrt{2}\right)$, sendo $g(x) = \frac{x}{x^2+1}$
+
+## c)
+
+$$\frac{f(a+b)-f(a-b)}{ab}$$
+
+sendo $f(x) = x^2$ e $ab \neq 0$
+
+## d)
+
+$$\frac{f(a+b)-f(a-b)}{ab}$$
+
+sendo $f(x) = 3x+1$ e $ab \neq 0$
+
+# Exercício 4
+
+(UDESC, 2020) Define-se como função exponencial a relação dada por $f: \mathbb{R} \rightarrow \mathbb{R}$ tal que $f(x) = a^x$ sendo $a \in \mathbb{R}$, $a>0, a\neq1$. Analise as sentenças, e assinale (V) para verdadeiro e (F) para falsa:
+
+1.  $f(x) = 2-x$ não é uma função exponencial.
+2.  Uma função exponencial não está definida para valores negativos de $x$.
+3.  $f(x) = \pi^x$ é uma função exponencial e intercepta o eixo das ordenadas em $y = 1$.
+4.  Toda função exponencial possui uma assíntota horizontal.
